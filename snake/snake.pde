@@ -227,10 +227,12 @@ void manageTail() {
 drawTail();
 checkTailCollision();
   // Add a new Segment to your ArrayList that has the same X and Y as the head of your snake.
- tail.add(new Segment(head.getX(),head.getY()));
+ if(howlong>1){
+   tail.add(new Segment(head.getX(),head.getY()));
+ }
   // To keep your tail the right length:
   // while the tail size is greater than the number of food pieces eaten, remove the first Segment in your tail.
-if(howlong>tail.size()){
+if(howlong<=tail.size()){
   tail.remove(0);
 }
   
